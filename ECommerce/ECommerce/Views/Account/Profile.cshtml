@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profile</h2>
+
+@if(Session["UserId"] != null)
+{
+    <h4>Hello @Session["Username"].ToString()</h4>
+    if(ViewBag.message != null)
+    {
+        <h5>
+            @ViewBag.message
+        </h5>
+    }
+
+    @Html.ActionLink("View your Products", "Index", "Product", new { user = Session["Username"].ToString() }, null);
+    <br />
+    @Html.ActionLink("Add a Product", "Add", "Product");
+
+}

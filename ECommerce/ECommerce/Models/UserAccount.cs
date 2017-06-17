@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace ECommerce.Models
@@ -27,6 +28,19 @@ namespace ECommerce.Models
         [Required(ErrorMessage = "This field is required.")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public String SetPassword(string newPassword)
+        {
+            PasswordHasher passwordHasher = new PasswordHasher();
+            Password = passwordHasher.HashPassword(newPassword);
+            return Password;
+        }
+
+        public PasswordVerificationResult VerifyPassword(string passwordCandidate)
+        {
+            PasswordHasher passwordHasher = new PasswordHasher();            
+            return passwordHasher.VerifyHashedPassword(Password, passwordCandidate);
+        }
 
         [Required(ErrorMessage = "This field is required.")]
         [Compare("Password", ErrorMessage = "Password does not match")]

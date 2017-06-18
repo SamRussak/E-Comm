@@ -12,19 +12,19 @@
         <p class="lead">
             By creating an account with E-Comm you will be opening up a world of trading, shopping and financial opportunity.
         </p>
-        <p>@Html.ActionLink("Learn More!", "About", "Home") </p>
-        <p>@Html.ActionLink("Create an Account or Login", "Login", "Account") </p>
+        <p style="text-align:center">@Html.ActionLink("Learn More!", "About", "Home") </p>
+        <p style="text-align:center">@Html.ActionLink("Create an Account or Login", "Login", "Account") </p>
 
         <div class="form-horizontal">
-            <hr />
-            <h4>Search</h4>            
+            <br />
+            <h4 style="text-align:center">Check Out Our Inventory</h4>            
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                <div style="text-align:center">
+                    @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control", @style = "margin: 0px auto; width: 600px; " } })
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="text-align:center">
                 <div class="col-md-10">
                     <input id="button" type="submit" value="Search" class="btn btn-default" />
                 </div>

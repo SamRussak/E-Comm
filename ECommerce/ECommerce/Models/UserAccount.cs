@@ -47,6 +47,8 @@ namespace ECommerce.Models
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
+        public List<Product> checkOut { get; set; }
+
 
     }
 }

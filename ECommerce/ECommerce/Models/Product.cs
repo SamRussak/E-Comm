@@ -27,5 +27,7 @@ namespace ECommerce.Models
         [EmailAddress(ErrorMessage = "Enter valid email address")]
         public string Email { get; set; }
 
+        public UserAccount buyer { get; set; }
+
     }
 }
